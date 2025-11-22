@@ -1,5 +1,10 @@
 #include "display.h"
 
+/**
+ * TODO
+ * WRITE YOUR CLASS FUNCTION IMPLEMENTATIONS HERE
+ */
+
 void Display::drawWiFiSymbol(int x, int y, uint16_t color)
 {
     int r1 = 8;
@@ -100,17 +105,10 @@ void Display::drawBatterySymbol(int x, int y, int battery, uint16_t color)
     {
         battery = 100;
     }
-    int fill_width = (box_w - 2 * fill_margin) * ((float)battery / 100); // 50% fill level
+    int fill_width = (box_w - 2 * fill_margin) * ((float)battery / 100);
     int fill_height = box_h - 2 * fill_margin;
     int fill_x = x - box_w / 2 + fill_margin;
     int fill_y = y - fill_height / 2;
     tft.fillRect(fill_x, fill_y, fill_width, fill_height, TFT_GREEN);
     String percent = String(battery) + "%";
 }
-
-
-
-/**
- * TODO
- * WRITE YOUR CLASS FUNCTION IMPLEMENTATIONS HERE
- */
